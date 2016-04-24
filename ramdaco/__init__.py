@@ -14,6 +14,7 @@ def mailin():
 	subject = '<none>'
 	if request.method == 'POST':
 		subject = request.form['subject']
+		return subject
 	return subject
 
 if __name__ == "__main__":
