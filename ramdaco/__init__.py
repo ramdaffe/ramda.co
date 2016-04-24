@@ -11,7 +11,7 @@ def hello():
 
 @app.route("/hi", methods=['POST','GET'])
 def mailin():
-	subject = '<none>'
+	subject = "no message"
 	if request.method == 'POST':
 		subject = request.form['subject']
 		return subject
