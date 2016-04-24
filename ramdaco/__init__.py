@@ -8,7 +8,7 @@ def hello():
 	return render_template('index.html')
 
 
-@app.route("/hi", methods=["POST"])
+@app.route("/hi", methods=['GET','POST'])
 def mailin():
     is_spam = request.form['X-Mailgun-SFlag'] == 'Yes'
     return request.form['subject']
