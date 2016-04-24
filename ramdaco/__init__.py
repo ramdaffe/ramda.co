@@ -9,10 +9,13 @@ def hello():
 	return render_template('index.html')
 
 
-@app.route("/hi", methods=['GET','POST'])
+@app.route("/hi", methods=['POST','GET'])
 def mailin():
-    is_spam = request.form['X-Mailgun-SFlag'] == 'Yes'
-    return request.form['subject']
+	subject = '<none>'
+	if request.method == 'POST':
+    	is_spam = request.form['X-Mailgun-SFlag'] == 'Yes'
+    	subject = request.form['subject']
+    return subject
 
 if __name__ == "__main__":
     app.run()
