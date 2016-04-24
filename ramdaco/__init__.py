@@ -13,9 +13,8 @@ def hello():
 def mailin():
 	subject = '<none>'
 	if request.method == 'POST':
-    	is_spam = request.form['X-Mailgun-SFlag'] == 'Yes'
-    	subject = request.form['subject']
-    return subject
+		subject = request.form['subject']
+	return subject
 
 if __name__ == "__main__":
-    app.run()
+	app.run()
